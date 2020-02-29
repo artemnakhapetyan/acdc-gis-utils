@@ -1,0 +1,27 @@
+{
+  "name": "acdc-gis-utils",
+  "version": "0.0.1",
+  "license": "MIT",
+  "keywords": [
+    "angular6",
+    "angular 6",
+    "angular7",
+    "angular 7",
+    "gis utils",
+    "mapping",
+    "location picker",
+    "typescript"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/artemnakhapetyan/acdc-gis-utils.git"
+  },
+  "peerDependencies": {
+    "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
+    "@angular/core": "^6.0.0-rc.0 || ^6.0.0",
+    "@angular/forms": "^6.0.0-rc.0 || ^6.0.0",
+    "leaflet": "^1.6.0",
+    "terraformer": "^1.0.10",
+    "terraformer-wkt-parser": "^1.2.1"
+  }
+}
