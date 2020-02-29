@@ -2,7 +2,7 @@
 
 Requires following dependencies:
 <br/>
-"bootstrap": "^4.4.1",
+"bootstrap": "^4.4.1" or "@angular/material": "^8.0.0"
 <br/>
 "leaflet": "^1.6.0",
 <br/>
@@ -13,7 +13,8 @@ Requires following dependencies:
 Angular versions support - 6,7+
 
 
-See [Demo](https://stackblitz.com/edit/angular-psycfk)
+See [Demo for Bootstrap](https://stackblitz.com/edit/angular-psycfk)
+See [Demo for Material](https://stackblitz.com/edit/angular-bvbpph)
 
 
 ## Latest updates
@@ -25,7 +26,7 @@ See [Demo](https://stackblitz.com/edit/angular-psycfk)
 ### 1. Install dependencies with npm
 ```npm
 
-npm install bootstrap
+npm install bootstrap (or npm install @angular/material)
 npm install leaflet
 npm install terraformer
 npm install terraformer-wkt-parser
@@ -39,7 +40,7 @@ npm install acdc-gis-utils
 
 ```
 
-### 3. Import leaflet and bootstrap css files. Example importing using angular.json:
+### 3. Import leaflet and bootstrap css files (in case of material import material style). Example importing bootstrap with angular.json:
 ```ts
 
 "styles": [
@@ -64,7 +65,7 @@ imports: [
 
 ## Usage
 
-### 1. LocationPickerInputComponent:
+### 1. LocationPickerInputComponent (bootstrap style):
 ```html
 
 <form #form="ngForm">
@@ -75,6 +76,7 @@ imports: [
         [defaultShowMap]="false"
         mapHeight="200px"
         mapWidth="100%"
+        [inputFIeldTpl]="inputFIeldTpl"
         [closeOnChoose]="true"
         name="location" [(ngModel)]="location"></location-picker-input>
 </form>
@@ -99,9 +101,42 @@ Available attributes: <br />
 **defaultShowMap** - show map by default (if false user can toggle map using input field trigger button) <br />
 **mapHeight** - map height <br />
 **mapWidth** - map width <br />
-**closeOnChoose** - close map after location was choosed <br />
+**inputFIeldTpl** - template for input field (if not provided default will be used) <br />
+**closeOnChoose** - close map after location was chosed <br />
 
-### 2. Import and use gis utils service:
+### 2. LocationPickerInputComponent (material style providing tpl is required as default is bootstrap style):
+```html
+
+<form #form="ngForm">
+    <location-picker-input 
+            initialLatitude="41.73033005046653" 
+            initialLongitude="44.81666564941407" 
+            initialZoom="10" 
+            [defaultShowMap]="true"
+            mapHeight="200px"
+            mapWidth="400px"
+            [inputFIeldTpl]="inputFIeldTpl"
+            [closeOnChoose]="false"
+            name="location" [(ngModel)]="location"></location-picker-input>
+</form>
+
+<!-- your custom input template (required in material case as default is bootstrap style) -->
+<ng-template #inputFIeldTpl let-props="props" let-onChooseLocation="onChooseLocation" let-propagateChange="propagateChange">
+    <mat-form-field>
+      <mat-label>Location</mat-label>
+      <input matNativeControl type="text" class="form-control" name="locationValue" [(ngModel)]="props.locationValue" placeholder="Click on map to choose location..." aria-label="Location" readonly>
+      <button type="button" matSuffix mat-button>
+        <span class="input-group-text" style="cursor: pointer;" (click)="onChooseLocation()">
+          <svg aria-hidden="true" class="acdc-svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505.04 442.66l-99.71-99.69c-4.5-4.5-10.6-7-17-7h-16.3c27.6-35.3 44-79.69 44-127.99C416.03 93.09 322.92 0 208.02 0S0 93.09 0 207.98s93.11 207.98 208.02 207.98c48.3 0 92.71-16.4 128.01-44v16.3c0 6.4 2.5 12.5 7 17l99.71 99.69c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.59.1-33.99zm-297.02-90.7c-79.54 0-144-64.34-144-143.98 0-79.53 64.35-143.98 144-143.98 79.54 0 144 64.34 144 143.98 0 79.53-64.35 143.98-144 143.98zm.02-239.96c-40.78 0-73.84 33.05-73.84 73.83 0 32.96 48.26 93.05 66.75 114.86a9.24 9.24 0 0 0 14.18 0c18.49-21.81 66.75-81.89 66.75-114.86 0-40.78-33.06-73.83-73.84-73.83zm0 96c-13.26 0-24-10.75-24-24 0-13.26 10.75-24 24-24s24 10.74 24 24c0 13.25-10.75 24-24 24z"></path></svg>
+        </span>
+      </button>
+    </mat-form-field>
+</ng-template>
+
+```
+
+
+### 3. Import and use gis utils service:
 ```ts
 
 import { AcdcGisUtilsService } from 'acdc-gis-utils';

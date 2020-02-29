@@ -1,12 +1,16 @@
 {
   "name": "acdc-gis-utils",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "license": "MIT",
   "keywords": [
     "angular6",
     "angular 6",
     "angular7",
     "angular 7",
+    "angular8",
+    "angular 8",
+    "bootstrap",
+    "material",
     "gis utils",
     "mapping",
     "location picker",
