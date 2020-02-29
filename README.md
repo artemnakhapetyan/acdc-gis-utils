@@ -2,6 +2,8 @@
 
 Requires following dependencies:
 <br/>
+"bootstrap": "^4.4.1",
+<br/>
 "leaflet": "^1.6.0",
 <br/>
 "terraformer": "^1.0.10",
@@ -20,6 +22,7 @@ Angular versions support - 6,7+
 ### 1. Install dependencies with npm
 ```npm
 
+npm install bootstrap
 npm install leaflet
 npm install terraformer
 npm install terraformer-wkt-parser
@@ -33,7 +36,18 @@ npm install acdc-gis-utils
 
 ```
 
-### 2. Import gis module in your project's root module app.module.ts:
+### 3. Import leaflet and bootstrap css files. Example importing using angular.json:
+```ts
+
+"styles": [
+    "src/styles.css",
+    "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+    "./node_modules/leaflet/dist/leaflet.css"
+]
+
+```
+
+### 4. Import gis module in your project's root module app.module.ts:
 ```ts
 
 import { AcdcGisUtils } from 'acdc-gis-utils';

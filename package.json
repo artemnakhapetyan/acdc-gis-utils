@@ -1,6 +1,6 @@
 {
   "name": "acdc-gis-utils",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
   "keywords": [
     "angular6",
@@ -20,6 +20,7 @@
     "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
     "@angular/core": "^6.0.0-rc.0 || ^6.0.0",
     "@angular/forms": "^6.0.0-rc.0 || ^6.0.0",
+    "bootstrap": "^4.4.1",
     "leaflet": "^1.6.0",
     "terraformer": "^1.0.10",
     "terraformer-wkt-parser": "^1.2.1"
