@@ -13,6 +13,9 @@ Requires following dependencies:
 Angular versions support - 6,7+
 
 
+See [Demo](https://stackblitz.com/edit/angular-psycfk)
+
+
 ## Latest updates
 
 *29 February 2020* alpha version
