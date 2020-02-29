@@ -1,8 +1,11 @@
 # Gis Utils (Location picker input, gis utils service containing utility functions like converting GeoJSON and WKT formats)
 
 Requires following dependencies:
+<br/>
 "leaflet": "^1.6.0",
+<br/>
 "terraformer": "^1.0.10",
+<br/>
 "terraformer-wkt-parser": "^1.2.1"
 
 Angular versions support - 6,7+
