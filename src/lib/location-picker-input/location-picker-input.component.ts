@@ -18,7 +18,7 @@ import { AcdcGisUtilsService } from '../acdc-gis-utils.service';
 })
 export class LocationPickerInputComponent implements OnInit, OnDestroy, ControlValueAccessor {
   
-  @ViewChild("leafletMapDivRef")
+  @ViewChild("leafletMapDivRef", {static: true})
   leafletMapDivRef: ElementRef;
 
   private map: any;
@@ -154,10 +154,10 @@ export class LocationPickerInputComponent implements OnInit, OnDestroy, ControlV
   /**
    * input field trigger (show/hide map)
    */
-  onChooseLocation($event) {
-    this['props']['configs'].showMap = !this['props']['configs'].showMap;
+  onChooseLocation(props) {
+    props['configs'].showMap = !props['configs'].showMap;
     setTimeout( () => {
-      this['props']['configs'].map.invalidateSize(false);
+      props['configs'].map.invalidateSize(false);
     });
   }
 

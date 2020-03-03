@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 
 import * as Terraformer from 'terraformer';
 import * as Wkt from 'terraformer-wkt-parser';
-import { L } from '@angular/core/src/render3';
 
 @Injectable({
   providedIn: 'root'

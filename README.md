@@ -19,6 +19,7 @@ See [Demo for Material](https://stackblitz.com/edit/angular-bvbpph)
 
 ## Latest updates
 
+*03 March 2020* angular 9 compatibility <br/>
 *29 February 2020* alpha version
 
 ## Install
